@@ -19,6 +19,12 @@ const Home = () => {
         // window.open(imageUrl)
     };
 
+    const handleKeyPress = (event) => {
+        if (event.key === 'Enter') {
+            searchImages(); // Call the search function on Enter key press
+        }
+    };
+
     const searchImages = async () => {
         const query = "nature";
         const response = await fetch(
@@ -39,7 +45,7 @@ const Home = () => {
             <div className='image_editor'>
                 <h1>Please Search Images...</h1>
                 <div className='box-search'>
-                    <SearchBar onImageSelect={handleImageSelect} setInputValue={setInputValue} inputValue={inputValue} />
+                    <SearchBar onImageSelect={handleImageSelect} onKeyPress={handleKeyPress} setInputValue={setInputValue} inputValue={inputValue} />
                     <button onClick={searchImages}>Search</button>
                 </div>
             </div>

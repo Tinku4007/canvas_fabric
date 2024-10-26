@@ -1,7 +1,7 @@
 // src/components/SearchBar.js
 import React, { useState } from 'react';
 
-function SearchBar({ onImageSelect, setInputValue, inputValue }) {
+function SearchBar({ onImageSelect, setInputValue, inputValue , onKeyPress }) {
     // const [query, setQuery] = useState('');
 
     // const searchImages = async () => {
@@ -20,6 +20,7 @@ function SearchBar({ onImageSelect, setInputValue, inputValue }) {
             type="text"
             placeholder="Search images..."
             value={inputValue}
+            onKeyPress={onKeyPress} 
             onChange={(e) => setInputValue(e.target.value)}
         />
         </>
