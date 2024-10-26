@@ -1,0 +1,179 @@
+/* src/App.css */
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  background-color: #f5f7fa;
+  margin: 0;
+  padding: 0;
+  /* display: flex; */
+  /* justify-content: center; */
+  /* align-items: center; */
+  min-height: 100vh;
+  color: #333;
+}
+
+h1 {
+  color: #333;
+  text-align: center;
+}
+
+.app-container {
+  width: 100%;
+  max-width: 1200px;
+  margin: 20px auto;
+  background-color: #fff;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+  border-radius: 8px;
+  padding: 20px;
+}
+
+.search-bar {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 20px;
+}
+
+.search-bar input {
+  width: 300px;
+  padding: 8px;
+  border-radius: 5px;
+  border: 1px solid #ddd;
+  margin-right: 8px;
+}
+
+.search_input {
+  margin-top: 20px;
+  width: 100%;
+}
+
+.box-search {
+  margin-top: 20px;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  width: 100%;
+
+}
+
+.box-search input {
+  padding: 10px;
+  width: 100%;
+  border-radius: 10px;
+  outline: none;
+  border: 1px solid #ccc;
+}
+.box-search button {
+  padding: 10px;
+  border-radius: 10px;
+  outline: none;
+  border: 1px solid #ccc;
+}
+
+.search-bar button {
+  padding: 8px 16px;
+  border: none;
+  background-color: #007bff;
+  color: white;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.image-results {
+  margin-top: 20px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 15px;
+}
+
+.image-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 23%;
+  text-align: center;
+}
+
+.image-card img {
+  width: 100%;
+  border-radius: 8px;
+  height: 214px;
+  object-fit: cover;
+}
+
+.canvas-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 20px;
+}
+
+button.action-btn {
+  margin-top: 10px;
+  padding: 8px 12px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 14px;
+}
+
+button.action-btn:hover {
+  opacity: 0.9;
+}
+
+button.add-text {
+  background-color: #28a745;
+  color: white;
+}
+
+button.add-shape {
+  background-color: #ffc107;
+  color: white;
+}
+
+button.download {
+  background-color: #17a2b8;
+  color: white;
+}
+
+
+
+
+
+
+
+
+
+/* CanvasEditor.css */
+.canvas-editor {
+  display: flex;
+  flex-direction: column;
+  align-items: center; /* Center the canvas and buttons horizontally */
+  justify-content: center; /* Center the canvas and buttons vertically */
+  height: 100vh; /* Full viewport height */
+}
+
+.canvas-container {
+  margin-bottom: 20px; /* Space between canvas and buttons */
+}
+
+canvas {
+  border: 1px solid #ccc; /* Optional: border for the canvas */
+}
+
+.button-container {
+  display: flex;
+  justify-content: center; /* Center the buttons horizontally */
+  gap: 10px; /* Space between buttons */
+}
+
+.action-btn {
+  padding: 10px 20px;
+  font-size: 16px;
+  cursor: pointer;
+}
