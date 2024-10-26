@@ -1,13 +1,14 @@
-import React, { useState } from 'react'
+import React, { useState } from 'react';
 import SearchBar from '../components/SearchBar';
 import CanvasEditor from '../components/CanvasEditor';
 import { useNavigate } from 'react-router-dom';
 
 const Home = () => {
-    const navigate = useNavigate()
+    const navigate = useNavigate();
     const [images, setImages] = useState([]);
     const [inputValue, setInputValue] = useState('');
     const [selectedImage, setSelectedImage] = useState(null);
+    const [searched, setSearched] = useState(false); // Track if search button clicked
 
     const handleImageSelect = (images) => {
         setImages(images);
@@ -15,8 +16,7 @@ const Home = () => {
 
     const selectImageForCanvas = (imageUrl) => {
         setSelectedImage(imageUrl);
-        navigate('/canvasEditor', { state: { imageUrl } })
-        // window.open(imageUrl)
+        navigate('/canvasEditor', { state: { imageUrl } });
     };
 
     const handleKeyPress = (event) => {
@@ -26,20 +26,18 @@ const Home = () => {
     };
 
     const searchImages = async () => {
-        const query = "nature";
+        setSearched(true); // Set searched to true before making API call
         const response = await fetch(
             `https://api.unsplash.com/search/photos?query=${inputValue}&client_id=6HyUc2uH58tHwHun9ixNWgnERdrOdnzqCyfgFEBfs1g`
         );
         const data = await response.json();
-        // onImageSelect(data.results); // Pass images to parent component
-        setImages(data.results); // Pass images to parent component
+        setImages(data.results); // Update images with search results
     };
-
 
     return (
         <div className="app-container">
             <div>
-                <h4 className='name'>Name: Tinku saini</h4>
+                <h4 className='name'>Name: Tinku Saini</h4>
                 <h4>Email: Tinkusaini1252@gmail.com</h4>
             </div>
             <div className='image_editor'>
@@ -50,20 +48,26 @@ const Home = () => {
                 </div>
             </div>
             <div className="image-results">
-                {images?.map((img) => (
-                    <div key={img.id} className="image-card">
-                        <img src={img.urls.thumb} alt={img.alt_description} />
-                        <button
-                            className="action-btn add-text"
-                            onClick={() => selectImageForCanvas(img.urls.regular)}
-                        >
-                            Add Captions
-                        </button>
-                    </div>
-                ))}
+                {
+                    searched && images.length === 0 ? (
+                        <p>Not Found</p> // Show "Not Found" if no images are found after search
+                    ) : (
+                        images.map((img) => (
+                            <div key={img.id} className="image-card">
+                                <img src={img.urls.thumb} alt={img.alt_description} />
+                                <button
+                                    className="action-btn add-text"
+                                    onClick={() => selectImageForCanvas(img.urls.regular)}
+                                >
+                                    Add Captions
+                                </button>
+                            </div>
+                        ))
+                    )
+                }
             </div>
         </div>
-    )
-}
+    );
+};
 
-export default Home
+export default Home;
