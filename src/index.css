@@ -177,3 +177,7 @@ canvas {
   font-size: 16px;
   cursor: pointer;
 }
+
+.name{
+  margin-bottom: 10px;
+}

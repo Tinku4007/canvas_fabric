@@ -15,12 +15,14 @@ function SearchBar({ onImageSelect, setInputValue, inputValue }) {
     // };
 
     return (
+        <>
         <input
             type="text"
             placeholder="Search images..."
             value={inputValue}
             onChange={(e) => setInputValue(e.target.value)}
         />
+        </>
     );
 }
 

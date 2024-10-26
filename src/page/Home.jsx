@@ -32,6 +32,10 @@ const Home = () => {
 
     return (
         <div className="app-container">
+            <div>
+                <h4 className='name'>Name: Tinku saini</h4>
+                <h4>Email: Tinkusaini1252@gmail.com</h4>
+            </div>
             <div className='image_editor'>
                 <h1>Please Search Images...</h1>
                 <div className='box-search'>
