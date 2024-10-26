@@ -68,6 +68,7 @@ h1 {
   outline: none;
   border: 1px solid #ccc;
 }
+
 .box-search button {
   padding: 10px;
   border-radius: 10px;
@@ -153,23 +154,30 @@ button.download {
 .canvas-editor {
   display: flex;
   flex-direction: column;
-  align-items: center; /* Center the canvas and buttons horizontally */
-  justify-content: center; /* Center the canvas and buttons vertically */
-  height: 100vh; /* Full viewport height */
+  align-items: center;
+  /* Center the canvas and buttons horizontally */
+  justify-content: center;
+  /* Center the canvas and buttons vertically */
+  height: 100vh;
+  /* Full viewport height */
 }
 
 .canvas-container {
-  margin-bottom: 20px; /* Space between canvas and buttons */
+  margin-bottom: 20px;
+  /* Space between canvas and buttons */
 }
 
 canvas {
-  border: 1px solid #ccc; /* Optional: border for the canvas */
+  border: 1px solid #ccc;
+  /* Optional: border for the canvas */
 }
 
 .button-container {
   display: flex;
-  justify-content: center; /* Center the buttons horizontally */
-  gap: 10px; /* Space between buttons */
+  justify-content: center;
+  /* Center the buttons horizontally */
+  gap: 10px;
+  /* Space between buttons */
 }
 
 .action-btn {
@@ -178,17 +186,21 @@ canvas {
   cursor: pointer;
 }
 
-.name{
+.name {
   margin-bottom: 10px;
 }
 
-@media (max-width:500px){
+@media (max-width:500px) {
   .image-card {
     width: 100%;
+  }
+  .button-container{
+    flex-wrap: wrap;
+  }
 }
-}
-@media (min-width:501px) and (max-width:700px){
+
+@media (min-width:501px) and (max-width:700px) {
   .image-card {
     width: 48%;
-}
+  }
 }
